@@ -1,0 +1,20 @@
+.ContactBar {
+    height: 100%;
+    width: 20%;
+    background-color: #f8f8f8;
+    float: left;
+    border: 1px solid lightskyblue;
+    padding: 5px;
+    overflow: scroll;
+    overflow-x: hidden;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    position: relative;
+}
+
+.ContactBar::-webkit-scrollbar {
+    display: none;
+};
+
+
+

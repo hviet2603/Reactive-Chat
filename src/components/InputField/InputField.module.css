@@ -1,0 +1,39 @@
+.InputFieldBlock {
+    width: 100%;
+    background-color: aliceblue;
+    height: 10%;
+    bottom: 0;
+    border: 1px solid lightskyblue;
+    border-left: none;
+    border-right: none
+}
+
+input[type="textarea"] {
+    width: 80%;
+    height: 40%;
+    margin-left: 5%;
+    margin-top: 20px;
+    padding: 5px 20px;
+}
+
+input[type="textarea"]:focus {
+    outline-color: lightskyblue;
+}
+
+.SendButton {
+    border: 2px solid lightskyblue;
+    background-color: aliceblue;
+    color: #61dafb;
+    font-size: larger;
+    vertical-align: middle;
+    margin-left: 10px;
+    width: 10%;
+    padding: 5px 0;
+    border-radius: 5px;
+}
+
+.SendButton:hover {
+    background-color: lightskyblue;
+    color: blue;
+    cursor: pointer;
+}

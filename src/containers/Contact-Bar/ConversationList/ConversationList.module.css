@@ -1,0 +1,12 @@
+.ConversationList {
+    /*height: 100%;*/
+    overflow: scroll;
+    padding: 10px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.ConversationList::-webkit-scrollbar {
+    display: none;
+};
+
