@@ -1,6 +1,6 @@
 import React from 'react';
-import ContactBar from '../../containers/Contact-Bar/ContactBar';
-import ChatWindow from '../../containers/Chat-Window/ChatWindow';
+import ConversationBar from '../../containers/ConversationBar/ConversationBar';
+import ChatWindow from '../../containers/ChatWindow/ChatWindow';
 
 const MainApp = props => {
 
@@ -10,7 +10,7 @@ const MainApp = props => {
 
     return (
         <div style={AppStyle}>
-            <ContactBar/>
+            <ConversationBar/>
             <ChatWindow/>
         </div>
     )

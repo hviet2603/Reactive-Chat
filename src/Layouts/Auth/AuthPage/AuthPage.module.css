@@ -1,0 +1,70 @@
+.AuthForm {
+    width: 50%;
+    margin: auto;
+    margin-top: 80px;
+    border: 1px solid lightgray;
+    padding-top: 50px;
+    border-radius: 10px;
+    box-shadow: 3px 2px 4px gray;
+    text-align: center;
+    height: 300px;
+}
+
+.FormRow {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    padding: 5px 0;
+    float: left;
+}
+
+.FormRow:last-child {
+    margin-top: 30px;
+}
+
+.FormRow div {
+    width: 50%;
+    height: 100%;
+    margin: auto;
+    padding: 0 5%;
+}
+
+label {
+    display: inline-block;
+    width: 25%;
+}
+
+input {
+    display: inline-block;
+    width: 40%;
+    height: 30px;
+}
+
+input:focus {
+    outline-color: #61dafb;
+}
+
+
+.AuthFormButton {
+    border: none;
+    background-color: #61dafb;
+    border-radius: 5px;
+    height: 40px;
+    width: 45%;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    display: block;
+    float: left;
+    margin: 0 5px;
+}
+
+.AuthFormButton:hover {
+    background-color: lightskyblue;
+    color: blue;
+}
+
+.AuthFormButton:focus {
+    outline: none;
+}
+

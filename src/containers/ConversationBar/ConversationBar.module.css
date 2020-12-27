@@ -1,4 +1,4 @@
-.ContactBar {
+.ConversationBar {
     height: 100%;
     width: 20%;
     background-color: #f8f8f8;
@@ -12,7 +12,7 @@
     position: relative;
 }
 
-.ContactBar::-webkit-scrollbar {
+.ConversationBar::-webkit-scrollbar {
     display: none;
 };
 

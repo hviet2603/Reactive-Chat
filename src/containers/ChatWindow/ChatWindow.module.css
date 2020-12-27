@@ -1,0 +1,18 @@
+.ChatWindow {
+    width: 80%;
+    height: 100%;
+    position: relative;
+    float: left;
+}
+
+.MessageWindow {
+    padding: 20px 50px;
+    height: 90%;
+    overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.MessageWindow::-webkit-scrollbar {
+    display: none;
+};
