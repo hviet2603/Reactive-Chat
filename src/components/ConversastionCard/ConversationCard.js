@@ -1,17 +1,35 @@
 import React from 'react';
 import classes from './ConversationCard.module.css';
+import { connect } from 'react-redux';
+import * as mainActions from '../../store/actions/mainActions';
 
 const ConversationCard = props => {
 
     let classList = [classes.ConversationCard];
-    if (props.active) classList.push(classes.activeCard);
-    
+    if (props.mainChatId === props.chatId) classList.push(classes.activeCard);
+    let lMessage = props.lastMessage !== undefined ? <p><b>{props.lastMessage.userName}:</b> <i>{props.lastMessage.content}</i></p>: null;
+
     return (
-        <div className={classList.join(' ')}>
+        <div 
+            className={classList.join(' ')}
+            onClick={props.onSwitchChat.bind(null,props.chatId)}
+        >
             <div className={classes.ConversationTitle}>{props.title}</div>
-            <p className={classes.lastMessage}>{props.lMessage}</p>
+            {lMessage}
         </div>
     )
 }
 
-export default ConversationCard;
+const mapStateToProps = state => {
+    return {
+        mainChatId: state.main.mainChatId
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onSwitchChat: id => dispatch(mainActions.switchMainChat(id))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ConversationCard);

@@ -6,8 +6,8 @@ import classes from './AuthPage.module.css';
 const AuthPage = props => {
 
     let [authType, setAuthType] = useState('LOGIN');
-    let [email, setEmail] = useState('');
-    let [password, setPassword] = useState('');
+    let email = '';
+    let password = '';
     let { isAuthenticated } = props;
 
     useEffect(() => {
@@ -37,15 +37,17 @@ const AuthPage = props => {
     let inputChangedHandler = (event, identifier) => {
         switch (identifier) {
             case 'email':
-                setEmail(event.target.value);
+                email = event.target.value;
                 break;
 
             default:
-                setPassword(event.target.value);
+                password = event.target.value;
                 break;
         }
     }
-    
+
+    console.log("Render");
+        
     return (
         <form
             className={classes.AuthForm}

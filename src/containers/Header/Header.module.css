@@ -1,7 +1,10 @@
+/* react blue: #61dafb*/
+
 header {
-    background-color: #61dafb;
+    background-color: lightblue;
     height: 10vh;
     padding: 0 20px;
+    border-bottom: 1px solid lightskyblue;
 }
 
 .AppLogo {

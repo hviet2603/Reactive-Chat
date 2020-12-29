@@ -4,6 +4,7 @@
     background-color: #f8f8f8;
     float: left;
     border: 1px solid lightskyblue;
+    border-top: none;
     padding: 5px;
     overflow: scroll;
     overflow-x: hidden;

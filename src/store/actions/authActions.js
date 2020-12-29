@@ -7,11 +7,12 @@ export const authStart = () => {
     };
 };
 
-export const authSuccess = (token, userId) => {
+export const authSuccess = (token, userId, userName) => {
     return {
         type: actionTypes.AUTH_SUCCESS,
         idToken: token,
-        userId: userId
+        userId: userId,
+        userName: userName
     };
 };
 
@@ -40,11 +41,22 @@ export const auth = (email, password, isSignup) => {
             localStorage.setItem('token', response.data.idToken);
             localStorage.setItem('expirationDate', expirationDate);
             localStorage.setItem('userId', response.data.localId);
-            dispatch(authSuccess(response.data.idToken, response.data.localId));
+            localStorage.setItem('userName', response.data.email.split('@')[0]);
+            dispatch(authSuccess(response.data.idToken, response.data.localId, response.data.email.split('@')[0]));
             //dispatch(checkAuthTimeout(response.data.expiresIn));
         })
         .catch(err => {
             dispatch(authFail(err.response.data.error));
         });
-    }
+    };
+};
+
+export const logout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('expirationDate');
+    localStorage.removeItem('userId');
+    localStorage.removeItem('userName');
+    return {
+        type: actionTypes.AUTH_LOGOUT
+    };
 }

@@ -1,0 +1,47 @@
+.Modal {
+    width: 30%;
+    height: 30%;
+    z-index: 100;
+    position: absolute;
+    background-color: #f8f8f8;
+    top: 30%;
+    left: 40%;
+    border-radius: 5px;
+}
+
+.Modal form {
+    text-align: center;
+}
+
+.modalTitle {
+    font-size: 40px;
+    text-align: center;
+    padding: 10px 0;
+    color: lightskyblue;
+}
+
+.inputBlock {
+    padding: 5% 0;
+    height: 30%;
+}
+
+.Modal button {
+    border: none;
+    background-color: lightblue;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    height: 40px;
+    margin: 10px 5px;
+    width: 100px;
+}
+
+.Modal button:hover {
+    background-color: lightskyblue;
+    color: blue;
+}
+
+.Modal button:focus {
+    outline: none;
+}

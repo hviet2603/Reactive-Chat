@@ -17,3 +17,11 @@
     background-color: lightskyblue;
 }
 
+.userName {
+    text-align: right;
+    font-size: 80%;
+    color: gray;
+    border-top: dashed 1px gray;
+    margin-top: 5px;
+}
+

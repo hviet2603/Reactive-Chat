@@ -47,7 +47,7 @@ input:focus {
 
 .AuthFormButton {
     border: none;
-    background-color: #61dafb;
+    background-color: lightblue;
     border-radius: 5px;
     height: 40px;
     width: 45%;

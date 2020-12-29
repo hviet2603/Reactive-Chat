@@ -3,3 +3,6 @@ export const AUTH_SUCCESS = 'AUTH_SUCCESS';
 export const AUTH_FAIL = 'AUTH_FAIL';
 export const AUTH_LOGOUT = 'AUTH_LOGOUT';
 
+export const UPDATE_CHAT_LIST = 'UPDATE_CHAT_LIST';
+export const UPDATE_MAIN_MESSAGES = 'UPDATE_MAIN_MESSAGES';
+export const SWITCH_MAIN_CHAT = 'SWITCH_MAIN_CHAT';
