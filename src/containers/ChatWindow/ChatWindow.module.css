@@ -29,3 +29,23 @@
     margin: 0;
     float: right;
 }
+
+@media (max-width: 1024px) {
+    .ChatWindow {
+        width: 60%;
+    }   
+}
+
+@media (max-width: 640px) {
+    .ChatWindow {
+        width: 100%;
+        position: absolute;
+        z-index: 30;
+        top: 0;
+        background-color: #fff;
+    }
+
+    .HiddenOnMobile {
+        display: none;
+    }
+}

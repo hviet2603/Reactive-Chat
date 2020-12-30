@@ -5,10 +5,13 @@ import ConversationList from './ConversationList/ConversationList';
 const ConversationBar = props => {
 
     return (
-        <div 
+        <div
             className={classes.ConversationBar}
         >
-           <ConversationList conversationList={props.conversationList}/>
+            <ConversationList
+                conversationList={props.conversationList}
+                switchModeMobile={props.switchModeMobile}
+            />
         </div>
     )
 }

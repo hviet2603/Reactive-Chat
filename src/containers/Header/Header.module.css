@@ -46,3 +46,46 @@ header {
     border-bottom: 4px solid blue;
     color: blue;
 }
+
+.MobileButtons {
+    display: none;
+}
+
+@media (max-width: 640px) {      
+    .AppButton {
+        display: none;
+    }
+
+    .Banner {
+        display: none;
+    }
+
+    .MobileButtons {
+        display: block;
+        list-style: none;
+        float: right;
+        text-align: right;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 50%;      
+    }
+
+    .MobileButtons li {
+        color: #fff;
+        height: 100%;
+        float: right;
+        width: 33.33%;
+        font-size: 200%;
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    /*.CancelChatBtn {
+        display: none;
+    }*/
+
+    .HiddenOnMobile {
+        display: none;
+    }
+}

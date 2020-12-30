@@ -9,10 +9,15 @@ import { Route, Switch, withRouter } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 const App = props => {
-  
+
   let { isAuthenticated } = props;
   let [showBackdrop, setBackdropVisibility] = useState(false);
   let [showModal, setModalVisibility] = useState(false);
+  let [showMessageMobile, setShowMessageMobile] = useState(false);
+
+  const switchShowMessageMobile = () => {
+    setShowMessageMobile(!showMessageMobile);
+  }
 
   const onCreateNewChat = () => {
     setBackdropVisibility(true);
@@ -25,26 +30,32 @@ const App = props => {
   }
 
   useEffect(() => {
-    if (!isAuthenticated) props.history.push('/auth');   
+    if (!isAuthenticated) props.history.push('/auth');
   }, [isAuthenticated, props.history])
 
   return (
     <div className="App">
-      <Backdrop 
+      <Backdrop
         show={showBackdrop}
         clicked={onCancelNewChat}
       />
-      <NewChatModal 
+      <NewChatModal
         show={showModal}
-        onCancel={onCancelNewChat}        
+        onCancel={onCancelNewChat}
       />
-      <Header 
-        isAuthenticated={isAuthenticated} 
+      <Header
+        isAuthenticated={isAuthenticated}
         onCreateNewChat={onCreateNewChat}
+        switchModeMobile={switchShowMessageMobile}
+        showCancelButton={showMessageMobile}
       />
       <Switch>
         <Route path="/auth" component={AuthPage} />
-        <Route path="/" exact component={MainApp} />
+        <Route path="/" exact
+          render={
+            (props) => <MainApp {...props} switchModeMobile={switchShowMessageMobile} showMessageMobile={showMessageMobile} />
+          }
+        />
       </Switch>
     </div>
   );
@@ -56,7 +67,7 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps,null)(withRouter(App));
+export default connect(mapStateToProps, null)(withRouter(App));
 
 
 

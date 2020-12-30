@@ -10,7 +10,8 @@ const ConversationList = props => {
                     conversation => <ConversationCard
                         title={conversation.title !== null ? conversation.title : 'No Title'} 
                         chatId={conversation.chatId}
-                        lastMessage={conversation.lastMessage} 
+                        lastMessage={conversation.lastMessage}
+                        switchModeMobile={props.switchModeMobile} 
                     />
                 )
             }

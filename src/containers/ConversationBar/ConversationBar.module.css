@@ -7,15 +7,34 @@
     border-top: none;
     padding: 5px;
     overflow: scroll;
-    overflow-x: hidden;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
     position: relative;
 }
 
-.ConversationBar::-webkit-scrollbar {
-    display: none;
-};
+@media (min-width: 1024px) {
+    .ConversationBar::-webkit-scrollbar {
+        display: none;
+    };
+}
+
+
+@media (max-width: 1024px) {
+    .ConversationBar {
+        width: 40%;
+    }
+}
+
+
+@media (max-width: 640px) {
+    .ConversationBar {
+        width: 100%;        
+    }
+
+    .ConversationBar::-webkit-scrollbar {
+        display: none;
+    };
+}
 
 
 

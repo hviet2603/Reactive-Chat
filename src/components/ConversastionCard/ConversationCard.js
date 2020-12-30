@@ -5,6 +5,11 @@ import * as mainActions from '../../store/actions/mainActions';
 
 const ConversationCard = props => {
 
+    const onClickHandler = () => {
+        props.onSwitchChat(props.chatId);
+        props.switchModeMobile();
+    }
+    
     let classList = [classes.ConversationCard];
     if (props.mainChatId === props.chatId) classList.push(classes.activeCard);
     let lMessage = props.lastMessage !== undefined ? <p><b>{props.lastMessage.userName}:</b> <i>{props.lastMessage.content}</i></p>: null;
@@ -12,7 +17,7 @@ const ConversationCard = props => {
     return (
         <div 
             className={classList.join(' ')}
-            onClick={props.onSwitchChat.bind(null,props.chatId)}
+            onClick={onClickHandler}
         >
             <div className={classes.ConversationTitle}>{props.title}</div>
             {lMessage}

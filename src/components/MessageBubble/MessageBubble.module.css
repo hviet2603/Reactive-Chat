@@ -25,3 +25,14 @@
     margin-top: 5px;
 }
 
+@media (max-width: 1024px) {
+    .bubble {
+        max-width: 60%;
+    }
+}
+
+@media (max-width: 640px) {
+    .bubble {
+        max-width: 80%;
+    }
+}

@@ -6,6 +6,7 @@ import classes from './AuthPage.module.css';
 const AuthPage = props => {
 
     let [authType, setAuthType] = useState('LOGIN');
+    let [isSignup, setIsSignup] = useState(false);
     let email = '';
     let password = '';
     let { isAuthenticated } = props;
@@ -13,21 +14,21 @@ const AuthPage = props => {
     useEffect(() => {
         // Switch to Main App when authenticated
         if (isAuthenticated) props.history.push("/");
-    },[isAuthenticated, props.history]);
-    
+    }, [isAuthenticated, props.history]);
+
     let switchAuthType = (event) => {
         event.preventDefault();
         switch (authType) {
             case 'LOGIN':
                 setAuthType('SIGNUP');
+                setIsSignup(true);
                 break;
             default:
                 setAuthType('LOGIN');
+                setIsSignup(false);
                 break;
         }
     };
-
-    let isSignup = authType === 'SIGNUP' ? true : false;
 
     let submitHandler = (event) => {
         event.preventDefault();
@@ -47,7 +48,7 @@ const AuthPage = props => {
     }
 
     console.log("Render");
-        
+
     return (
         <form
             className={classes.AuthForm}

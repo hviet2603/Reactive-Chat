@@ -68,3 +68,21 @@ input:focus {
     outline: none;
 }
 
+@media (max-width: 1000px) {
+    .AuthFormButton {
+        width: 100%;
+        display: block;
+        margin-bottom: 10px;
+    }    
+}
+
+@media (max-width: 640px) {
+    .AuthForm {
+        width: 80%;
+    }
+
+    .AuthForm input {
+        width: 60%;
+        margin-left: 10px;
+    }
+}

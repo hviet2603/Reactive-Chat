@@ -10,11 +10,13 @@ const ChatWindow = props => {
     
     useEffect(() => {
         messagesEndRef.current.scrollIntoView({ behavior: 'smooth'});
-        console.log("Should scroll");
     }, [props.mainMessages, messagesEndRef]); 
 
+    let chatWindowStyle = [classes.ChatWindow];
+    if (!props.showOnMobile) chatWindowStyle.push(classes.HiddenOnMobile); 
+
     return (
-        <div className={classes.ChatWindow}>
+        <div className={chatWindowStyle.join(" ")}>
             <div className={classes.MessageWindow}>
                 {
                     props.mainMessages.map((message) =>

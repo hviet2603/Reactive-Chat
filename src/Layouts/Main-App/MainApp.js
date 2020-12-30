@@ -4,6 +4,7 @@ import ChatWindow from '../../containers/ChatWindow/ChatWindow';
 import { connect } from 'react-redux';
 import database from '../../services/firebase/firebaseDB';
 import * as mainActions from '../../store/actions/mainActions';
+import classes from './MainApp.module.css';
 
 const MainApp = props => {
 
@@ -51,9 +52,14 @@ const MainApp = props => {
     }
 
     return (
-        <div style={AppStyle}>
-            <ConversationBar conversationList={props.conversationList}/>
-            <ChatWindow />
+        <div style={AppStyle} className={classes.mainApp}>
+            <ConversationBar 
+                conversationList={props.conversationList}
+                switchModeMobile={props.switchModeMobile}
+            />
+            <ChatWindow 
+                showOnMobile={props.showMessageMobile}
+            />
         </div>
     )
 }
