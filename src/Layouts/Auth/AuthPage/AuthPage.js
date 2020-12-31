@@ -7,13 +7,20 @@ const AuthPage = props => {
 
     let [authType, setAuthType] = useState('LOGIN');
     let [isSignup, setIsSignup] = useState(false);
+    /*let [email, setEmail] = useState('');
+    let [password, setPassword] = useState('');*/
     let email = '';
     let password = '';
     let { isAuthenticated } = props;
 
+    let authErrorMessage = props.error !== null ? <div className={[classes.errorMessage, classes.FormRow].join(' ')}>{props.error.message.split(' ')[0]}</div> : null;
+    
     useEffect(() => {
         // Switch to Main App when authenticated
-        if (isAuthenticated) props.history.push("/");
+        if (isAuthenticated) {
+            props.history.push("/");
+            console.log("Is Authenticated");
+        }
     }, [isAuthenticated, props.history]);
 
     let switchAuthType = (event) => {
@@ -38,10 +45,12 @@ const AuthPage = props => {
     let inputChangedHandler = (event, identifier) => {
         switch (identifier) {
             case 'email':
+                //setEmail(event.target.value);
                 email = event.target.value;
                 break;
 
             default:
+                //setPassword(event.target.value);
                 password = event.target.value;
                 break;
         }
@@ -64,6 +73,8 @@ const AuthPage = props => {
                 <input type="password" className="password" onChange={(event) => inputChangedHandler(event, 'password')}></input>
             </div>
 
+            {authErrorMessage}
+            
             <div className={classes.FormRow}>
                 <div>
                     <button
@@ -79,7 +90,7 @@ const AuthPage = props => {
                         SWITCH TO {authType === 'LOGIN' ? 'SIGNUP' : 'LOGIN'}
                     </button>
                 </div>
-            </div>
+            </div>            
         </form>
     )
 }

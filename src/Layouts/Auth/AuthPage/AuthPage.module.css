@@ -68,6 +68,13 @@ input:focus {
     outline: none;
 }
 
+.errorMessage {
+    color: red;
+    margin-top: 20px;
+    float: left;
+    text-align: center;
+}
+
 @media (max-width: 1000px) {
     .AuthFormButton {
         width: 100%;

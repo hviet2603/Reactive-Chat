@@ -8,11 +8,11 @@ const ConversationCard = props => {
     const onClickHandler = () => {
         props.onSwitchChat(props.chatId);
         props.switchModeMobile();
-    }
-    
+    }       
+
     let classList = [classes.ConversationCard];
     if (props.mainChatId === props.chatId) classList.push(classes.activeCard);
-    let lMessage = props.lastMessage !== undefined ? <p><b>{props.lastMessage.userName}:</b> <i>{props.lastMessage.content}</i></p>: null;
+    let lMessage = props.lastMessage !== undefined ? <p><b>{props.lastMessage.userName}:</b> <i>{props.lastMessage.content.length > 60 ? props.lastMessage.content.substring(0,79) + ' ...' : props.lastMessage.content}</i></p>: null;
 
     return (
         <div 

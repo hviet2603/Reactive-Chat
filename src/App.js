@@ -7,10 +7,11 @@ import Backdrop from './UI/Backdrop/Backdrop';
 import { connect } from 'react-redux';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import * as authActions from './store/actions/authActions';
 
 const App = props => {
 
-  let { isAuthenticated } = props;
+  let { isAuthenticated, onAutoLogIn } = props;
   let [showBackdrop, setBackdropVisibility] = useState(false);
   let [showModal, setModalVisibility] = useState(false);
   let [showMessageMobile, setShowMessageMobile] = useState(false);
@@ -30,8 +31,9 @@ const App = props => {
   }
 
   useEffect(() => {
+    if (!isAuthenticated) onAutoLogIn();
     if (!isAuthenticated) props.history.push('/auth');
-  }, [isAuthenticated, props.history])
+  }, [isAuthenticated, props.history, onAutoLogIn])
 
   return (
     <div className="App">
@@ -67,7 +69,13 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, null)(withRouter(App));
+const mapDispatchToProps = dispatch => {
+  return {
+    onAutoLogIn: () => dispatch(authActions.authCheckState())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(App));
 
 
 

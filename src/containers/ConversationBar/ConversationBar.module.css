@@ -18,6 +18,12 @@
     };
 }
 
+@media (min-width: 640px) {
+    .ConversationBar::-webkit-scrollbar {
+        display: none;
+    };
+}
+
 
 @media (max-width: 1024px) {
     .ConversationBar {

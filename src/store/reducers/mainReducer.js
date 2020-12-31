@@ -31,7 +31,7 @@ const mainReducer = (state=initialState, action) => {
     switch (action.type) {
         case actionTypes.UPDATE_CHAT_LIST: return updateChatList(state, action);
         case actionTypes.UPDATE_MAIN_MESSAGES: return updateMainMessages(state, action);
-        case actionTypes.SWITCH_MAIN_CHAT: return switchMainChat(state, action);       
+        case actionTypes.SWITCH_MAIN_CHAT: return switchMainChat(state, action);     
         default: return state;
     }
 }

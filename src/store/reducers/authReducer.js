@@ -27,6 +27,15 @@ const authSuccess = (state, action) => {
     };
 };
 
+const authFail = (state, action) => {
+    return {
+        ...state,
+        error: action.error,
+        loading: false
+    }
+}
+
+
 const logout = (state, action) => {
     return initialState;
 };
@@ -36,6 +45,7 @@ const authReducer = (state=initialState, action) => {
         case actionTypes.AUTH_START: return authStart(state,action);    
         case actionTypes.AUTH_SUCCESS: return authSuccess(state,action);
         case actionTypes.AUTH_LOGOUT: return logout(state,action);
+        case actionTypes.AUTH_FAIL: return authFail(state, action);
         default: return state;
     }
 }

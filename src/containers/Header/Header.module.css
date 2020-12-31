@@ -77,8 +77,9 @@ header {
         float: right;
         width: 33.33%;
         font-size: 200%;
-        padding-top: 20px;
+        padding-top: 15px;
         text-align: center;
+        overflow: hidden;
     }
 
     /*.CancelChatBtn {
