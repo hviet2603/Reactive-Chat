@@ -14,7 +14,7 @@ const MessageBubble = props => {
 
     return (
         <div className={classList.join(' ')}>
-            <div className={classes.contentBlock}>{props.content}</div>
+            <div className={classes.contentBlock}><p>{props.content}</p></div>
             {user}           
         </div>
     );

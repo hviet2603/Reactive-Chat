@@ -23,6 +23,10 @@
     word-wrap: break-word;
 }
 
+.contentBlock p {
+    margin: 0;
+}
+
 .userName {
     text-align: right;
     font-size: 80%;

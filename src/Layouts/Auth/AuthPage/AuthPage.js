@@ -7,10 +7,10 @@ const AuthPage = props => {
 
     let [authType, setAuthType] = useState('LOGIN');
     let [isSignup, setIsSignup] = useState(false);
-    /*let [email, setEmail] = useState('');
-    let [password, setPassword] = useState('');*/
-    let email = '';
-    let password = '';
+    let [email, setEmail] = useState('');
+    let [password, setPassword] = useState('');
+    /*let email = '';
+    let password = '';*/
     let { isAuthenticated } = props;
 
     let authErrorMessage = props.error !== null ? <div className={[classes.errorMessage, classes.FormRow].join(' ')}>{props.error.message.split(' ')[0]}</div> : null;
@@ -29,8 +29,12 @@ const AuthPage = props => {
             case 'LOGIN':
                 setAuthType('SIGNUP');
                 setIsSignup(true);
+                setEmail('');
+                setPassword('');
                 break;
             default:
+                setEmail('');
+                setPassword('');
                 setAuthType('LOGIN');
                 setIsSignup(false);
                 break;
@@ -45,13 +49,13 @@ const AuthPage = props => {
     let inputChangedHandler = (event, identifier) => {
         switch (identifier) {
             case 'email':
-                //setEmail(event.target.value);
-                email = event.target.value;
+                setEmail(event.target.value);
+                //email = event.target.value;
                 break;
 
             default:
-                //setPassword(event.target.value);
-                password = event.target.value;
+                setPassword(event.target.value);
+                //password = event.target.value;
                 break;
         }
     }
@@ -65,12 +69,12 @@ const AuthPage = props => {
         >
             <div className={classes.FormRow}>
                 <label for="email">Email</label>
-                <input type="email" className="email" onChange={(event) => inputChangedHandler(event, 'email')}></input>
+                <input type="email" className="email" value={email} onChange={(event) => inputChangedHandler(event, 'email')}></input>
             </div>
 
             <div className={classes.FormRow}>
                 <label for="password">Password</label>
-                <input type="password" className="password" onChange={(event) => inputChangedHandler(event, 'password')}></input>
+                <input type="password" className="password" value={password} onChange={(event) => inputChangedHandler(event, 'password')}></input>
             </div>
 
             {authErrorMessage}
