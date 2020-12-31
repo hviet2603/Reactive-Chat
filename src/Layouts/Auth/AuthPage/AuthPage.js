@@ -9,8 +9,6 @@ const AuthPage = props => {
     let [isSignup, setIsSignup] = useState(false);
     let [email, setEmail] = useState('');
     let [password, setPassword] = useState('');
-    /*let email = '';
-    let password = '';*/
     let { isAuthenticated } = props;
 
     let authErrorMessage = props.error !== null ? <div className={[classes.errorMessage, classes.FormRow].join(' ')}>{props.error.message.split(' ')[0]}</div> : null;
@@ -25,16 +23,14 @@ const AuthPage = props => {
 
     let switchAuthType = (event) => {
         event.preventDefault();
+        setEmail('');
+        setPassword('');
         switch (authType) {
             case 'LOGIN':
                 setAuthType('SIGNUP');
                 setIsSignup(true);
-                setEmail('');
-                setPassword('');
                 break;
             default:
-                setEmail('');
-                setPassword('');
                 setAuthType('LOGIN');
                 setIsSignup(false);
                 break;
